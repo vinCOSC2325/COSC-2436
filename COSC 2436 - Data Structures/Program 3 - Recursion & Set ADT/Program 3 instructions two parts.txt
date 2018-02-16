@@ -1,0 +1,209 @@
+COSC 2415 - Data Structures
+Bob Comer, Professor of Computer Studies
+
+Program 3 - Recursion & Set ADT
+
+	This assignment will have 2 parts. 
+	In the first part, 
+	you will implement and test a function that processes the elements of an array using recursion. 
+	In the second part, 
+	you will implement a set class template using an array.
+
+Part I (50% of grade)
+
+	Be sure to read through Chapter 2 in your textbook 
+	before starting this part of the assignment.
+
+	Section 2.4.2 in Chapter 2 of your textbook 
+	discusses a way to recursively process an array. 
+	Binary search is used as an example 
+	and C++ code for the binary search is given on page 70. 
+	Each call to the recursive binary search function 
+	processes a portion of the array 
+	identified by the first and last indexes of the subarray of the subarray 
+	to be processes by this call.
+
+Section 2.4.3 in Chapter 2 
+	discusses how to find the largest element in an array 
+	using the same recursive technique that was covered in the previous section. 
+	Pseudocode for a function called maxArray 
+	is given on page 72 of your textbook.
+
+Your job is to 
+	write an implementation 
+	for a C++ function called maxArray 
+	that will return the largest value in an integer array. 
+	You must also 
+	write a driver (program to test your function). 
+	You can put your maxArray function 
+	and your driver program in the same file if you want.
+
+Here is a version of the algorithm from the textbook that is worded slightly differently. Note that the array to be processed is called anArray.
+
+     if (anArray has only one entry)
+          return the value of that entry
+     else if (anArray has more than one entry)
+          return the maximum of maxArray(left half of anArray) and maxArray(right half of anArray)
+
+Note:
+
+	When you write a value-returning function, 
+	it is important that your function 
+	always return a value. 
+	If you study the code for binarySearch 
+	you should see that it 
+	always returns a value.
+
+	Now study the pseudocode for maxArray. 
+	It should be obvious that this pseudocode 
+	will not return a value if the function 
+	is called with first > last (anArray has no entries). 
+	We will cover a way to handle this problem later in the textbook. 
+	For this program, 
+	you can assume that your function 
+	will never be called with first > last. 
+	If you are familiar with the assert statement, 
+	you can use it to handle this error.
+
+
+
+
+Part II (50% of grade)
+
+Be sure to read through Chapter 3 of the textbook 
+before you start this part of the assignment.
+
+	For this part, 
+	you will implement a set ADT. 
+	A set is like a bag, 
+	except that duplicate entries 
+	are not allowed in a set.
+
+
+Objectives
+
+    Practice using arrays 
+	inside class objects.
+    Practice implementing an ADT 
+	with an interface 
+	and class templates. 
+
+Summary
+
+	A set has the same operations 
+	as a bag 
+	except 
+	as noted below. 
+	Use the BagInterface 
+	and ArrayBag class templates 
+	from Chapter 3 
+	section 3.2 of the textbook 
+	as models 
+	for your set ADT implementation. 
+	The files you need to get started 
+	are in Blackboard.
+
+The required changes for the set operations are:
+
+    Add operation 
+	-	Duplicate entries are not allowed in a set. 
+	If you add an entry that is already in the set, 
+	the set is not updated, 
+	but the operation is considered successful. 
+	If you add an entry that is not currently in the set, 
+	the entry needs to be added 
+	and the count of items 
+	in the set 
+	incremented by one. 
+	If the entry cannot be added for any reason, 
+	the operation fails.
+    Get frequency of operation 
+	- Delete this operation. 
+	Since duplicate entries are not allowed, 
+	the only possible results are zero or one. 
+	This information is already provided by the contains operation.
+    You will provide a default constructor 
+	that initializes the set to an empty set 
+	(like the bag constructor).
+    Add a second constructor that has 2 parameters 
+	- an array of ItemType elements, 
+	and a count of the number 
+	of elements in the array. 
+	Use the array elements 
+	to initialize the set. 
+
+Requirements
+
+    Vectors are used 
+	in the toVector() method of the class, 
+	and in the driver program 
+	that tests the class. 
+	Do not use vectors anywhere else. 
+	The main objective of this assignment is 
+	to use arrays inside class objects.
+    Do not use any C++ templates from the STL 
+	except as noted in Requirement 1.
+    You are encouraged 
+	to reuse class methods 
+	by calling them from other class methods 
+	(where appropriate). 
+	If you already have a tested method in your class 
+	that will do what you need, 
+	use it instead of 
+	copying the code to your new method. 
+
+Set Interface
+
+	Create an interface for your ADT 
+	called 
+	SetInterface. 
+	Be sure to include 
+	the changes listed above 
+	that need to be included in the interface. 
+	Use the BagInterface class template 
+	as a model for your interface. 
+	You must include updated documentation 
+	for your set interface operations (methods) 
+	similar to the documentation 
+	in the BagInterface file.
+
+Set Implementation using arrays
+
+	Create 
+	a class template 
+	called 
+	ArraySet 
+	to implement your ADT. 
+	You can combine 
+	the class template 
+	DEFINITION 
+	and class template 
+	IMPLEMENTATION 
+	in a 
+	single header file 
+	(as I did in the example Bag code provided). 
+	Be sure to include the changes listed above 
+	that need to be included in 
+	the ArraySet class template.
+
+Programming Assignment Deliverables
+
+When you have completed and tested parts I and II of the assignment, submit the following files:
+
+    driver and recursive function for part I
+    your driver for part II
+    SetInterface.h
+    ArraySet.h (includes class definition and implementation) 
+
+Important: Only send me files that contain C++ code. Do not send me executable files, project or make files, object code files, etc.
+
+You may want to create a zipped folder containing your files and attach it to your email.
+
+The Subject line of your email should be something like "Program 3 Submission".
+
+Return to C++ Home Page
+
+Copyright: © 2017 by the Austin Community College
+Department of Computer Studies. All rights reserved.
+Comments to: Bob Comer
+Last updated: September 19, 2017 

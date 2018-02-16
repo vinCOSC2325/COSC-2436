@@ -1,0 +1,101 @@
+Notes on Chapter 1 Data Abstraction: The Walls
+
+ADTs = abstract data types
+
+Data abstraction is a technique for increasing the modularity of a
+program—for building “walls” between a program and its data structures.
+
+defining ADTs help support several operations on the data when designing a solution 
+
+1.1 Object-Oriented Concepts
+
+coding without a solution design increases debugging time
+
+problem solving refers to the entire process of taking the statement of a problem and developing a computer program that solves that problem == we got a problem = lets develop a program to solve it = yeah! now we are problem solving
+
+what is the problem to be solved 
+design a conceptual solution
+implement as a computer program
+
+Object-Oriented analysis and design (OOAD) is a process for solving problems
+solution in this sense = a cp consisting of a system of interacting classes of objects
+
+Object = set of characteristics and behaviors related to the solution
+
+Class = a set of objects having the same type --> this is what has been going in the header for now
+
+instance = an object of the class --> 
+
+instantiate = create an object of a class --> instantiate is what is being done to the object
+
+OOAD helps us to discover and describe these objects and classes. These techniques give us a
+starting place for moving from a problem statement to a solution.
+
+1.1.1  Object-Oriented Analysis and Design
+
+Object-Oriented analysis (OOA) = process of understanding what the problem is and what the requirements of a solution are --> initial state in problem solving
+
+what do end users expect the solution to be and do
+requirements = gives description of what a solution must be and what a solution must do -- without imposing how to design or implement that solution
+
+OOA explores a problem in terms of its objects
+
+the result of OOA act as an input to the process of design
+Object-Oriented design (OOD) = write a solution to a problem - use the requirements from OOA  --> explores a solution to a problem
+
+to solve the problem efficiently, the collaborations among objects should be meaningful and minimal 
+
+multiple models of a solution can be created during OOD --> to explore objects and their collaborations
+
+1.1.2 Aspects of an Object-Oriented Solution
+
+A module = self-contained unit of code and could be a single, stand-alone function , a class method , a class itself, a group of several functions or classes that work closely together, or other blocks of code.
+
+algorithms = step-by-step recipes for performing a task within a finite period of time
+
+Functions and methods implement algorithms
+
+modules == must store, move, and alter data
+
+data members = individual data items specified in a class
+
+methods or member functions == operations specified in the class
+
+Encapsulation is a technique that hides inner details
+
+functions == encapsulate behavior
+
+objects == encapsulate data as well as behavior
+
+Inheritance = allows you to reuse classes you defined earlier for a related purpose by extending that implementation
+or making slight modifications --> Classes can inherit properties and operations from other classes
+
+polymorphism = allows the compiler to simply note that the meaning of an operation is unknown until execution time. --> the outcome of a particular operation depends upon the object that performs the operation.
+
+Note: Three principles of object-oriented programming
+1. Encapsulation: Objects combine data and operations.
+2. Inheritance: Classes can inherit properties from other classes.
+3. Polymorphism: Objects can determine appropriate operations at execution time.
+
+1.2 Achieving a Better Solution
+
+spend more time analyzing and designing a better solution to get better results -- there are several different ways to solve a problem -- work on identifying what aspects make one solution better than another
+
+1.2.1 Cohesion
+
+cohesive = should perform one well-defined task
+
+if a module is well named then it will be easier to know what that modules does -- if you name it sort then it should only sort -- if it prints and sorts then the name doesn't reflect the module well enough
+
+a highly cohesive module is easy to reuse in other software projects -- it could be used without change -- the less cohesive the less likely it will be used
+
+highly cohesive module are easy to maintain
+
+highly cohesive module is more robust and is less likely to be affected by change
+
+Note: A guiding principle of OOD is that each class should have a single, well-defined
+responsibility. The methods of a class should be highly cohesive and related directly to
+supporting the responsibility of the class. The responsibilities of a class are functionally
+equivalent to the tasks that the class needs to perform. If a class has too many responsibilities,
+it should be split into multiple classes, each with a single responsibility taken
+from the original class.

@@ -1,0 +1,146 @@
+Program 1 - EncryptedString Class
+
+refresh your memory
+Chapter 7 in the COSC 1337 textbook, 
+Starting Out with C++ Early Objects by Tony Gaddis 
+
+In this assignment you will create a class called EncryptedString that stores a string in encrypted format. You will then write a small driver program to test your class. 
+
+create a class called EncryptedString
+-stores a string in encrypted format
+then write a small driver program to test your class (EncryptedString)
+
+Assume that an EncryptedString is..
+- empty
+- consists only of spaces and alphabetic characters 
+-- (upper and lower case letters A through Z)
+
+
+Class Members:
+
+- one private data field  of type string
+-- (sometimes also called a member variable or data member)
+-- stores a string in encrypted format
+-- Do not store any other data in your EncryptedString object
+
+public methods (member functions): 
+
+- A default (no argument) constructor
+-- stores an empty string in the data field
+
+- constructor that takes a string as a parameter 
+-- stores the encrypted version of the parameter in the data field
+--  method should not actually do any "work"
+-- It should call the set method
+--- to encrypt and store the string
+
+- A method called set
+-- takes a string as a parameter
+--- should encrypt the string parameter
+---  store the result in the object 
+---  method should discard any illegal characters in the string parameter
+
+- A method called get
+-- returns the original (un-encrypted) string
+-- should decrypt the string that is stored in the object's data member
+-----> Note that any invalid characters will have been removed
+
+************************************************************************************************
+method prototypes = In computer programming, a function prototype or function interface is a declaration of a function that specifies the function's name and type signature (arity, data types of parameters, and return type), but omits the function body. While a function definition specifies how the function does what it does (the "implementation"), a function prototype merely specifies its interface, i.e. what data types go in and come out of it. 
+************************************************************************************************
+
+Your method prototypes should be:
+
+    EncryptedString();
+    EncryptedString( string str );
+    void set( string str );
+    string get();
+
+
+
+ EncryptedString object
+ - inside the class only the encrypted version of a string is stored
+ - outside the class will only see "normal" (unencrypted) strings
+ 
+ 
+ Each EncryptedString object
+ - responsible for encrypting the string to be stored
+ - responsible for decrypting the string before it is returned
+ 
+ 
+ Normally, you would want to prevent code from outside the class from "seeing" the encrypted version of the string
+ - for debugging purposes I want you to add one more public method to your class:
+ -- A method called getEncrypted 
+ --- returns the string in encrypted format
+ The method prototype should be:
+
+    string getEncrypted();
+
+Note: If you know what a constant method is, make get() and getEncrypted() constant methods. 
+
+******************************************************************************************
+https://edux.pjwstk.edu.pl/mat/260/lec/PRG2CPP_files/node95.html
+
+constant method = 
+ Methods of classes can be declared as constant. Such declaration informs the compiler that a method will not modify the state of the object that this method has been invoked for, i.e., that no member of the object will be changed by this method. Knowing this, the compiler can produce more effective code and, what is even more important, is able to check if the object is really not modified, even unintentionally. The keyword const should be placed just after the parenthesis closing the list of parameters of the method, but before
+
+    a brace opening the definition;
+    a semicolon ending the declaration.
+	
+ex:
+
+void Point::translate1(Point& p) const {
+*********************************************************************************************
+
+Encryption algorithm
+
+    A space is not encrypted. A space is stored as a space.
+    An alphabetic character is replaced by its successor in the ASCII code sequence. For example, the successor of ‘C’ (ASCII code 67) is ‘D’ (ASCII code 68). Exceptions: the successor of ‘Z’ is ‘A’, and the successor of ‘z’ is ‘a’. 
+
+For example, the string “Hi Mom!” would be encrypted as “Ij Npn”.
+
+Hint: If you do not know how to find the next character in the ASCII code sequence, try out this program:
+
+    int main()
+    {
+       char ch = ‘A’;
+       cout << ch << endl;
+       cout << (ch + 1) << endl;
+       return 0;
+    }
+
+*&**********************************************************************************************
+
+Driver
+
+Write a small driver program to test your class. Your program should exercise every class method and display enough information to convince me that your class is working correctly.
+
+Requirements:
+
+    Your program must be split into 3 files:
+        the driver program,
+        a class header file (class definition with data member definitions and method prototypes only),
+        and class implementation file containing class method definitions. 
+    Your code should be set up for separate compilation (in your COSC 1337 textbook by Gaddis, see Chapter 7 section 7.11).
+    The driver program for each programming project should begin with "header comments" containing:
+    - Your name
+    - Programming assignment number
+    - A short description of the program
+    - Course
+    - The date
+    For example:
+    // Programmer:      your name
+    // Project number: 1
+    // Project Desc:     Quadratic Expression class
+    // Course:              COSC 2436 PF III Data Structures
+    // Date:                  date of submission
+    Use a standard indentation convention in your code (see examples in textbook).
+    Use meaningful variable names.
+    Do not use global variables.
+    Your class methods should not contain any input or output operations. All input and output should be done in your driver.
+    If you are using Visual Studio, do not create A Win32 Console Project or Win32 Project. Create an Empty Project. Do not use any non-standard include files (like stdafx). 	
+
+
+
+
+ 

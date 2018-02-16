@@ -1,0 +1,22 @@
+C1.1.2 Constructors and Destructors
+Classes have two types of special methods, 
+called constructors and destructors. 
+A constructor 
+allocates memory for new instances of a class and can initialize the object’s data to specified values. 
+- Constructors have no return type—not even
+void
+— and cannot use return to return a value.
+A destructor 
+destroys an instance of a class when the object’s lifetime ends
+
+the public member for the default constructor will have ; after their names in the class (header file)
+the source file member function name for the default constructor may or may not have anything in it but it should have brackets after the name and ()
+there will not be a ; colon after the bracket for any of the function names
+
+in the source file the function name will be preceeded by the class name and double ::  ex: EncryptedString::getthePassword()const;
+also the const will go after the parenthesis in the header and the source for the get methods
+EncryptedString::getthePassword() const
+it will go inside the parenthesis for the parameterized constructor or set method -- anything that passes a variable will have the const before its type and variable name
+ex: void set(const std::string thePassword)
+the type of member function will be in both the header and source file function names
+but it will be followed by the class name and double :: in the source file while this is not necessary in the hearder file

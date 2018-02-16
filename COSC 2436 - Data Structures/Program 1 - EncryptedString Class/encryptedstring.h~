@@ -1,0 +1,39 @@
+    // Programmer:      Vincent Howg
+    // Project number:  1
+    // Project Desc:    Program 1 - EncryptedString Class 
+    // Course:          COSC 2415 PF III Data Structures
+    // Date:            1-17-2018
+
+
+class EncryptedString
+{
+private:
+    // Data field
+    // data member 
+    // store a string in encrypted format
+    string password;
+
+public:
+    // Default constructor
+    // stores an empty string
+    EncryptedString();
+    
+    // Parameterized constructor
+    // takes string as parameter
+    // stores encrypted version of the parameter in the data field
+    // calls set method to encrypt and store the string
+    EncryptedString( string thePassword );
+
+    // Method takes string as parameter - encrypts string parameter - stores result in object
+    // - discards illegal characters in the string parameter
+    void set( string thePassword );
+
+    // Method returns original (un-encrypted) string
+    // decrypts the string that is stored in the object's data member
+    string get() const;
+
+    // returns the string in encrypted format for debugging/testing purposes
+    string getEncrypted( const );
+
+    
+};

@@ -1,0 +1,5 @@
+    // Programmer:      Vincent Howg
+    // Project number:  1
+    // Project Desc:    Quadratic Expression class
+    // Course:          COSC 2415 PF III Data Structures
+    // Date:            1-17-2018

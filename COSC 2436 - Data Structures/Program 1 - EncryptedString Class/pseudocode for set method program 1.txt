@@ -1,0 +1,37 @@
+
+
+    // takes string as parameter - encrypts the string - store result    
+	// in the object
+    // discard any illegal characters 
+	void setEncrypted(std::string thePassword){
+        if(the string has illegal characters){
+		    for(the length of the string){
+				parse the characters
+				if(the character equals is alphabetic a through z){
+					yes
+						check next character
+						return to outside loop
+					no
+						does the character equal A through Z
+						yes
+							check the next character
+							return to outside loop
+						no
+							discard character
+							save new string to password
+							return to outside loop
+				}
+			}
+		}
+		while(the length of the password is greater than zero){
+			take the first letter of the string
+			add 1 to the first letter
+			store the new value in theNewPassword
+			loop
+			take the next letter of the string
+			add 1 to the second letter
+			add the second letter new value to theNewPassword
+			loop until all of the password string has changed and been stored into theNewPassword
+			end loop
+		}
+	}

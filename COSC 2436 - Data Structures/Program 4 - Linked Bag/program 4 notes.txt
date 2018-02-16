@@ -1,0 +1,158 @@
+
+
+COSC 2436 - Data Structures
+Bob Comer, Professor of Computer Studies
+
+Program 4 - Linked Bag
+
+Be sure to read through Chapter 4 in your textbook 
+before starting this assignment.
+
+In this assignment you will 
+make some changes to the 
+LinkedBag class template 
+from Chapter 4. 
+You will 
+modify one of the existing methods and 
+add a new method.
+
+Start with the first (nonrecursive) version of the LinkedBag class template 
+from Chapter 4. 
+I have put the files that you need 
+to get started in the Programming Assignments section of Blackboard.
+
+Important: 
+To use nullptr and 
+other features of C++11, 
+you need a compiler that is fairly recent. 
+If your compiler was released in the last couple of years, you are probably okay. 
+You may need to turn these features on in your IDE. 
+For example, I typically use Dev-C++ with the GCC compiler TDM-GCC 4.9.2. 
+To use C++11 features in Dev-C++, I had to select Tools/Compiler Options. 
+Under the General tab in the "Add the following commands when calling the compiler" section I had to add:
+
+     -std=gnu++11
+
+Requirement: 
+Do not make any changes to 
+the member variables (data members) for this class template. 
+Your modified class template 
+should only have 2 member variables 
+- headPtr and 
+itemCount. 
+In particular, 
+do not add a pointer to the last node in the linked list. 
+To find the last node, 
+you will need to use a temporary pointer and 
+traverse the list.
+
+Modify add method
+
+	Discussion: 
+	In a bag, 
+	the order of the entries 
+	does not matter. 
+	When you add a new entry to a bag, 
+	it makes sense to choose an implementation that is 
+	simple and fast. 
+	For a typical array implementation, 
+	the easiest place to 
+	add a new entry is 
+	at the end of the occupied part of the array. 
+	For the linked implementation, 
+	the easiest place to 
+	add a new entry 
+	is at the beginning of the linked-list. 
+	It would not make much sense to 
+	add a new entry at the end of the linked-list 
+	because this would be slower and more complex.
+
+	As an academic exercise, 
+	revise the public method add 
+	in class template LinkedBag 
+	so that the new node is 
+	inserted at the end of the linked chain 
+	instead of at the beginning.
+
+Add a second remove method
+
+	Add a new remove method 
+	that removes a random entry from the bag. 
+	This new method should basically 
+	work like the existing remove method 
+	except that a random entry is removed. 
+	Note: 
+	Leave the existing remove method 
+	in the interface and class template. 
+	The prototype will be:
+
+     bool remove();
+
+		You will need to add this method to your bag interface file. 
+		That is, 
+		BagInterface.h 
+		should include a pure virtual method 
+		that matches this new method. 
+		You must include documentation 
+		(comments) 
+		similar to the comments for the other methods in the interface.
+		Add the method prototype inside the class definition 
+		in LinkedBag.h.
+		Add the method implementation 
+		in LinkeBag.h. 
+
+You can implement this method by borrowing code from the existing remove method. Here is an informal algorithm:
+
+     canRemoveItem = bag not empty
+     if canRemoveItem
+        generate a random number in the range 0 through itemCount - 1
+        think of the linked list as an array - the first node contains entry 0, etc.
+        the random number indicates which node contains the entry to be deleted
+        use a temporary pointer to traverse the linked list to the node to be deleted
+        it is easier to remove the first node than any other node
+        copy the entry from the first node to the node that contains the entry to be deleted
+        delete the first node
+     end if
+     return canRemoveItem
+
+Here is an example program that shows how to generate a random integer in a given range using the rand() function. 
+The rand() function is defined in header file cstdlib. 
+This program displays a list of 4 random integers in the range 0 through 99:
+
+#include <iostream>
+#include <cstdlib>     // include definition for rand()
+using namespace std;
+
+     int main ()
+     {
+         int number;
+
+         cout << "Printing a list of 4 random integers in the range 0 through 99" << endl;
+
+         for (int i=0; i<4; i++)
+         {
+             number = rand() % 100;
+             cout << number << "  ";
+         }
+         cout << endl;
+
+         return 0;
+     }
+
+Be sure that your driver includes code to test these modifications.
+
+Assignment Deliverables
+
+Submit all of your source code files. These include:
+
+    driver
+    Bag Interface
+    LinkedBag header (including method implementations)
+    Node header (including method implementations) 
+
+Return to C++ Home Page
+
+Copyright: © 2018 by the Austin Community College
+Department of Computer Studies. All rights reserved.
+Comments to: Bob Comer
+Last updated: February 6, 2018

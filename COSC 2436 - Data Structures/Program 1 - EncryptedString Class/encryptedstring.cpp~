@@ -1,0 +1,41 @@
+    // Programmer:      Vincent Howg
+    // Project number:  1
+    // Project Desc:    Program 1 - EncryptedString Class 
+    // Course:          COSC 2415 PF III Data Structures
+    // Date:            1-17-2018
+
+# include "encryptedstring.h"
+
+    // default constructor
+    // stores an empty string in the data field
+    EncryptedString::EncryptedString(void) {
+    };
+
+    // parameterized constructor
+    // stores the encrypted parameter in the data field
+    EncryptedString::EncryptedString(string password){
+	    ecryptversion = password;
+    };
+
+    // destructor
+    // deletes the memory when completed to avoid memory leaks
+    EncryptedString::~EncryptedString(){
+    };
+
+    // mutator method called set
+    // takes string as parameter - encrypts the string - store result    // in the object
+    // discard any illegal characters
+    void EncryptedString::set(string password){
+
+    };
+
+    // accessor method called get
+    // returns the original (un-encrypted) string
+    // decrypts the string stored in the object's data member
+    EncryptedString::string get();
+
+
+        
+  
+        
+
